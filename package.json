@@ -1,0 +1,11 @@
+{
+  "name": "dash-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix dash-engine",
+    "build": "npm run build --prefix dash-engine",
+    "start": "npm run start --prefix dash-engine",
+    "lint": "npm run lint --prefix dash-engine"
+  }
+}

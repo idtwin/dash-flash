@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1A103C;
+  --foreground: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-display), "Fredoka", sans-serif;
+  --font-body: var(--font-body), "Nunito", sans-serif;
+}
+
+@keyframes arcadePatternDrift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 60px 60px, 0 0;
+  }
+}
+
+@keyframes sparkPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 6px #FFD166);
+  }
+  50% {
+    transform: scale(1.35) rotate(18deg);
+    filter: drop-shadow(0 0 16px #FF4655);
+  }
+}
+
+.spark-animate {
+  animation: sparkPulse 0.4s infinite ease-in-out;
+}
+
+.arcade-canvas {
+  background-color: #1A103C;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.08) 3px, transparent 3px),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  background-size: 32px 32px, 100% 100%;
+  animation: arcadePatternDrift 30s linear infinite;
+}
+
+.text-outline {
+  -webkit-text-stroke: 5px #000000;
+  paint-order: stroke fill;
+  text-shadow: 0 4px 0 #000000;
+}
+
+.text-outline-sm {
+  -webkit-text-stroke: 3px #000000;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #000000;
+}
+
+.text-outline-lg {
+  -webkit-text-stroke: 7px #000000;
+  paint-order: stroke fill;
+  text-shadow: 0 6px 0 #000000;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), "Nunito", sans-serif;
+  user-select: none;
+  overflow: hidden;
+}
